@@ -78,21 +78,20 @@ To ensure empirical validity, all preprocessing and partitioning follow strict d
 
 
 Raw Parquet (10,000 Rows)
-│
-▼
+       │
+       ▼
 [Row-Level Cleaning & Image MD5 Hashing] ──► Dropped 3 Corrupt/Duplicate Rows (9,997 Left)
-│
-▼
+       │
+       ▼
 [Stratified Random Splitting (Seed=42)]
-├── Train Split (70%): 6,997 Samples (3,497 Class 0 / 3,500 Class 1)
-├── Val Split   (15%): 1,500 Samples (  750 Class 0 /   750 Class 1)
-└── Test Split  (15%): 1,500 Samples (  750 Class 0 /   750 Class 1)
-│
-▼
+       ├── Train Split (70%): 6,997 Samples (3,497 Class 0 / 3,500 Class 1)
+       ├── Val Split   (15%): 1,500 Samples (  750 Class 0 /   750 Class 1)
+       └── Test Split  (15%): 1,500 Samples (  750 Class 0 /   750 Class 1)
+       │
+       ▼
 [Zero-Leakage Feature Extraction]
-├── TF-IDF Vocabulary (5,000-D): Fitted EXCLUSIVELY on Train Headlines
-└── ResNet-18 (512-D): Precomputed under torch.no_grad() & Cached to Drive
-
+       ├── TF-IDF Vocabulary (5,000-D): Fitted EXCLUSIVELY on Train Headlines
+       └── ResNet-18 (512-D): Precomputed under torch.no_grad() & Cached to Drive
 
 1. **Row-Level Sanitization:** Stripped HTTP/HTTPS URLs, eliminated HTML markup, purged non-alphanumeric punctuation, normalized whitespace sequences, and cast all strings to lowercase.
 2. **Cryptographic Image Deduplication:** Computed MD5 hashes on raw image byte payloads:
