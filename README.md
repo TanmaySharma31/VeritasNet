@@ -161,7 +161,8 @@ To prevent Google Colab Out-Of-Memory (OOM) crashes and achieve fast convergence
 
 * **Backbone:** Torchvision pretrained ResNet-18 ($\text{fc} = \text{Identity}$).
 * **Mechanism:** ResNet-18 was frozen (`requires_grad = False`). Spatial feature vectors ($512\text{-D}$) were precomputed under `torch.no_grad()` and cached directly to Google Drive as `.npy` arrays.
-* **Optimization:** The fusion head was trained on cached vectors for 10 epochs using $\text{Adam}(\eta = 10^{-3}, \text{weight\_decay} = 10^{-4})$ with batch size 32.
+* **Optimization:** The fusion head was trained on cached vectors for 10 epochs using <img width="412" height="72" alt="image" src="https://github.com/user-attachments/assets/18b00fed-cc01-426a-bc18-8ff3a9450549" />
+ with batch size 32.
 * **Runtime:** $\sim 1.8$ seconds per epoch ($\sim 20$ seconds total). Peak validation accuracy ($85.87\%$) was achieved at Epoch 2. Checkpoint selection at this peak prevented empirical text overfitting.
 
 ### Stage 2: Targeted Backbone Fine-Tuning
