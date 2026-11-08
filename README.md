@@ -76,7 +76,6 @@ Total: 10,000 Balanced Samples
 
 To ensure empirical validity, all preprocessing and partitioning follow strict data leakage safeguards.
 
-
 Raw Parquet (10,000 Rows)
        │
        ▼
@@ -92,6 +91,7 @@ Raw Parquet (10,000 Rows)
 [Zero-Leakage Feature Extraction]
        ├── TF-IDF Vocabulary (5,000-D): Fitted EXCLUSIVELY on Train Headlines
        └── ResNet-18 (512-D): Precomputed under torch.no_grad() & Cached to Drive
+
 
 1. **Row-Level Sanitization:** Stripped HTTP/HTTPS URLs, eliminated HTML markup, purged non-alphanumeric punctuation, normalized whitespace sequences, and cast all strings to lowercase.
 2. **Cryptographic Image Deduplication:** Computed MD5 hashes on raw image byte payloads:
