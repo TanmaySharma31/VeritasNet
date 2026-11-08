@@ -1,0 +1,4 @@
+Model Stage,Validation Accuracy,Test Accuracy,Macro-F1,Net Gain vs Baseline,Status
+1. Text Baseline (TF-IDF + LogReg),73.27%,75.53%,0.7543,0.00% (Baseline),Verified Benchmark
+2. VeritasNet Stage 1 (Frozen ResNet-18),85.87%,86.27%,0.8625,+10.74%,Frozen Multimodal Benchmark
+3. VeritasNet Stage 2 (Fine-Tuned Layer 4),91.27%,89.13%,0.8913,+13.60%,Champion Multimodal Model
