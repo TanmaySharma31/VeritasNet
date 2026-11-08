@@ -8,11 +8,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Benchmark: EMNLP 2024](https://img.shields.io/badge/Benchmark-EMNLP%202024-green.svg)](https://aclanthology.org/2024.findings-emnlp.962/)
 
-**Candidate:** Tanmay Sharma
-**SAP ID:** 590011578
-**Domain:** Multimodal Deep Learning, Natural Language Processing & Computer Vision
-**Execution Environment:** Google Colab (Tesla T4 GPU, 15 GB VRAM)
-**Persistent Storage:** Google Drive / Local Scratchpad
 
 ---
 
